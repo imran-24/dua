@@ -4,7 +4,7 @@ import { getCategoriesWithSubCategories } from "@/actions/queries";
 import { CategoryList } from "@/app/(main)/(routes)/duas/_components/category/category-list";
 import { Suspense } from "react";
 
-export const revalidate = false; // Ensures the page is statically generated
+// export const revalidate = false; // Ensures the page is statically generated
 
 export default function MainLayout({
   children,
