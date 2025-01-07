@@ -1,9 +1,9 @@
-import React, { Suspense } from "react";
-// import DuaList from "./_components/dua/dualist";
-// import { getCategoriesWithSubCategories, getDuasByCategoryId } from "@/actions/queries";
-import Settings from "@/components/settings/settings";
-import DuaList from "../_components/dua/dualist";
-import { getCategoriesWithSubCategories, getDuasByCategoryId } from "@/actions/queries";
+import React from "react";
+
+import {
+  getCategoriesWithSubCategories,
+  getDuasByCategoryId,
+} from "@/actions/queries";
 
 const DuaPage = async ({
   searchParams,
@@ -16,21 +16,18 @@ const DuaPage = async ({
   console.log(searchParams, categoryId.cat);
 
   const duas = getDuasByCategoryId(categoryId.cat);
+
+  console.log(categories, duas);
+
   return (
     <div className='w-full grid grid-cols-8 gap-x-4'>
-      <Suspense>
+      {/* <Suspense>
         <DuaList duas={duas} categories={categories}  />
-        {/* Hi there */}
         <Settings />
-      </Suspense>
+      </Suspense> */}
+      Hi there
     </div>
   );
 };
 
 export default DuaPage;
-
-
-
-
-
-
