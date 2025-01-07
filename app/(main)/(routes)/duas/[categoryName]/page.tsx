@@ -1,23 +1,23 @@
 import React from "react";
 
-import {
-  getCategoriesWithSubCategories,
-  getDuasByCategoryId,
-} from "@/actions/queries";
+// import {
+//   getCategoriesWithSubCategories,
+//   getDuasByCategoryId,
+// } from "@/actions/queries";
 
 const DuaPage = async ({
   searchParams,
 }: {
   searchParams: Promise<{ cat: string }>;
 }) => {
-  const categories = getCategoriesWithSubCategories();
-  const categoryId = await searchParams; // Resolve the promise
+  // const categories = getCategoriesWithSubCategories();
+  // const categoryId = await searchParams; // Resolve the promise
 
-  console.log(searchParams, categoryId.cat);
+  console.log(searchParams);
 
-  const duas = getDuasByCategoryId(categoryId.cat);
+  // const duas = getDuasByCategoryId(categoryId.cat);
 
-  console.log(categories, duas);
+  // console.log(categories, duas);
 
   return (
     <div className='w-full grid grid-cols-8 gap-x-4'>
