@@ -70,7 +70,7 @@ export const CategoryList = ({ categories }: CategoryListProps) => {
           setTimeout(() => {
             catElement?.scrollIntoView({
               behavior: "smooth",
-              block: "center", // Align the element at the start of the view
+              block: "start", // Align the element at the start of the view
             });
           }, 300);
         }

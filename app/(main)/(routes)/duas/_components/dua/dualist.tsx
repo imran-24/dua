@@ -1,12 +1,12 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
-import DuaCard from "./dua-card";
 import { CategoryWithSubCategory, Dua } from "@/type";
 import { usePathname, useSearchParams } from "next/navigation";
 import { AlignJustify } from "lucide-react";
 import { SheetSidebar } from "./sheet-sidebar";
 import DualistSkeleton from "./dualist-skeleton";
+import DuaCard from "./dua-card";
 
 interface DuaListProps {
   duas: Dua[];
@@ -90,19 +90,22 @@ const DuaList = ({ duas, categories }: DuaListProps) => {
           </span>
         </div>
         {
-          duas.map((dua, index) => (
-            <DuaCard
-              key={index}
-              serial={dua.dua_id}
-              referenceEn={dua.refference_en}
-              duaName={dua.dua_name_en}
-              topEn={dua.top_en}
-              duaAradic={dua.dua_arabic}
-              transliterationEn={dua.transliteration_en}
-              translationEn={dua.translation_en}
-              audio={dua.audio}
-            />
-          ))
+          duas.map((dua, index) => {
+            console.log(dua.audio);
+            return (
+              <DuaCard
+                key={index}
+                serial={dua.dua_id}
+                referenceEn={dua.refference_en}
+                duaName={dua.dua_name_en}
+                topEn={dua.top_en}
+                duaAradic={dua.dua_arabic}
+                transliterationEn={dua.transliteration_en}
+                translationEn={dua.translation_en}
+                audio={dua.audio}
+              />
+            );
+          })
         }
       </div>
     </div>
