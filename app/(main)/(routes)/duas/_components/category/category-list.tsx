@@ -1,15 +1,15 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+// import { useRouter, useSearchParams } from "next/navigation";
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
 import CategoryCard from "./category-card";
 import SubCategoryList from "./sub-category-list";
 import { CategoryWithSubCategory } from "@/type";
-import { cn, makeUrl } from "@/lib/utils";
+// import { cn, makeUrl } from "@/lib/utils";
 import CategorySkeleton from "./category-skeleton";
-import { useOrigin } from "@/hooks/use-origin";
+// import { useOrigin } from "@/hooks/use-origin";
 
 interface CategoryListProps {
   categories: CategoryWithSubCategory[];
