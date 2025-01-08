@@ -126,15 +126,15 @@ const DuaCard = ({
           <div>
             {audio && (
               <div>
-                {/* <audio controls className='hidden' ref={playerRef}>
-                  <source src={audio} type='audio/mp3' />
-                </audio> */}
                 <audio controls className='hidden' ref={playerRef}>
+                  <source src={audio} type='audio/mp3' />
+                </audio>
+                {/* <audio controls className='hidden' ref={playerRef}>
                   <source
                     src='https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3'
                     type='audio/mp3'
                   />
-                </audio>
+                </audio> */}
 
                 <button
                   type='button'
