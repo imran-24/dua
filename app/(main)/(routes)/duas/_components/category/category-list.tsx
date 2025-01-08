@@ -1,29 +1,29 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRef, useState } from "react";
+// import { useRouter, useSearchParams } from "next/navigation";
 
 import CategoryCard from "./category-card";
 import SubCategoryList from "./sub-category-list";
 import { CategoryWithSubCategory } from "@/type";
-import { makeUrl } from "@/lib/utils";
+// import { makeUrl } from "@/lib/utils";
 import CategorySkeleton from "./category-skeleton";
 import CategorySearch from "./category-search";
-import { useOrigin } from "@/hooks/use-origin";
+// import { useOrigin } from "@/hooks/use-origin";
 
 interface CategoryListProps {
   categories: CategoryWithSubCategory[];
 }
 
 export const CategoryList = ({ categories }: CategoryListProps) => {
-  const params = useSearchParams();
-  const categoryId = params.get("cat");
+  // const params = useSearchParams();
+  // const categoryId = params.get("cat");
 
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  const [selected, setSelected] = useState<string | null>(categoryId || "1");
-  const router = useRouter();
-  const origin = useOrigin();
+  // const [selected, setSelected] = useState<string | null>(categoryId || "1");
+  // const router = useRouter();
+  // const origin = useOrigin();
 
   const [searchQuery, setSearchQuery] = useState(""); // State for search query
   const [filteredCategories, setFilteredCategories] = useState(categories); // State for filtered categories
@@ -51,36 +51,36 @@ export const CategoryList = ({ categories }: CategoryListProps) => {
     setFilteredCategories(filtered);
   };
 
-  useEffect(() => {
-    if (!categoryId) {
-      const catname = categories[0].cat_name_en;
-      const url = makeUrl(origin, catname, 1);
-      console.log(categoryId, url);
-      return router.push(url);
-    } // Only run if there is a cat parameter
-    if (categoryId !== selected) {
-      setSelected(categoryId); // Update selected if it differs
+  // useEffect(() => {
+  //   if (!categoryId) {
+  //     const catname = categories[0].cat_name_en;
+  //     const url = makeUrl(origin, catname, 1);
+  //     console.log(categoryId, url);
+  //     return router.push(url);
+  //   } // Only run if there is a cat parameter
+  //   if (categoryId !== selected) {
+  //     setSelected(categoryId); // Update selected if it differs
       
-      // Scroll to the selected category
-      // if (scrollRef.current) {
-      //   // const categoryIndex = categories.findIndex(
-      //   //   (category) => category.cat_id.toString() === categoryId
-      //   // );
-      //   if (Number(categoryId) >= 0) {
-      //     const catElement = scrollRef.current.children[
-      //       Number(categoryId)
-      //     ] as HTMLDivElement;
-      //     setTimeout(() => {
-      //       catElement?.scrollIntoView({
-      //         behavior: "smooth",
-      //         block: "center", // Align the element at the start of the view
-      //       });
-      //     }, 300);
-      //   }
-      // }
+  //     // Scroll to the selected category
+  //     // if (scrollRef.current) {
+  //     //   // const categoryIndex = categories.findIndex(
+  //     //   //   (category) => category.cat_id.toString() === categoryId
+  //     //   // );
+  //     //   if (Number(categoryId) >= 0) {
+  //     //     const catElement = scrollRef.current.children[
+  //     //       Number(categoryId)
+  //     //     ] as HTMLDivElement;
+  //     //     setTimeout(() => {
+  //     //       catElement?.scrollIntoView({
+  //     //         behavior: "smooth",
+  //     //         block: "center", // Align the element at the start of the view
+  //     //       });
+  //     //     }, 300);
+  //     //   }
+  //     // }
 
-    }
-  }, [categories, categoryId, origin, router, selected]);
+  //   }
+  // }, [categories, categoryId, origin, router, selected]);
 
   if (categories.length === 0) {
     return <CategorySkeleton />;

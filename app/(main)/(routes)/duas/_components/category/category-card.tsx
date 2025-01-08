@@ -33,7 +33,6 @@ const CategoryCard = ({
   const url = makeUrl(origin ,category, id);
 
   return (
-    <>
       <Link
         href={url}
         role='button'
@@ -69,7 +68,6 @@ const CategoryCard = ({
           </div>
         </div>
       </Link>
-    </>
   );
 };
 
