@@ -6,6 +6,7 @@ import { usePathname, useSearchParams } from "next/navigation";
 import { AlignJustify } from "lucide-react";
 import { SheetSidebar } from "./sheet-sidebar";
 import DualistSkeleton from "./dualist-skeleton";
+import DuaCard from "./dua-card";
 
 interface DuaListProps {
   duas: Dua[];
@@ -88,7 +89,7 @@ const DuaList = ({ duas, categories }: DuaListProps) => {
             {category}
           </span>
         </div>
-        {/* {
+        {
           duas.map((dua, index) => {
             console.log(dua.audio);
             return (
@@ -105,7 +106,7 @@ const DuaList = ({ duas, categories }: DuaListProps) => {
               />
             );
           })
-        } */}
+        }
       </div>
     </div>
   );

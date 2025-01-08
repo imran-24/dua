@@ -1,15 +1,11 @@
 'use client'
 
-import { Loader } from "lucide-react"
+import {  Loader2 } from "lucide-react"
 
-interface LoadingProps{
-    large?: boolean
-}
-
-const Loading = ({large}: LoadingProps) => {
+const Loading = () => {
   return (
     <div className="h-full flex items-center justify-center w-full">
-        <Loader size={large ? 26 : 20} className="text-[#1fa45b] animate-spin " />
+        <Loader2 size={26} className="text-[#1fa45b] animate-spin " />
     </div>
   )
 }

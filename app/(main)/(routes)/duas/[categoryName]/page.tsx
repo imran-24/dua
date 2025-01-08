@@ -1,31 +1,28 @@
-import React from "react";
+import React, { Suspense } from "react";
 
-// import {
-//   getCategoriesWithSubCategories,
-//   getDuasByCategoryId,
-// } from "@/actions/queries";
+import {
+  getCategoriesWithSubCategories,
+  getDuasByCategoryId,
+} from "@/actions/queries";
+import DuaList from "../_components/dua/dualist";
+import Settings from "@/components/settings/settings";
 
 const DuaPage = async ({
   searchParams,
 }: {
   searchParams: Promise<{ cat: string }>;
 }) => {
-  // const categories = getCategoriesWithSubCategories();
-  // const categoryId = await searchParams; // Resolve the promise
 
-  console.log(searchParams);
-
-  // const duas = getDuasByCategoryId(categoryId.cat);
-
-  // console.log(categories, duas);
+  const categories = await  getCategoriesWithSubCategories();
+  const categoryId = await searchParams; // Resolve the promise
+  const duas = await getDuasByCategoryId(categoryId.cat);
 
   return (
     <div className='w-full grid grid-cols-8 gap-x-4'>
-      {/* <Suspense>
+      <Suspense >
         <DuaList duas={duas} categories={categories}  />
         <Settings />
-      </Suspense> */}
-      Hi there
+      </Suspense>
     </div>
   );
 };

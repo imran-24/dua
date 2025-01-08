@@ -12,9 +12,9 @@ export default async function MainLayout({
 }: {
   children: React.ReactNode;
 }) {
+  
   const data = await getCategoriesWithSubCategories();
 
-  console.log(data)
   return (
     <Sidebar>
       <div className='h-full'>
