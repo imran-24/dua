@@ -1,8 +1,9 @@
 import Sidebar from "@/components/sidebar/sidebar";
 import Navigation from "./duas/_components/navigation";
 import { getCategoriesWithSubCategories } from "@/actions/queries";
-import { CategoryList } from "@/app/(main)/(routes)/duas/_components/category/category-list";
 import { Suspense } from "react";
+import Loading from "@/components/loading";
+import { CategoryList } from "./duas/_components/category/category-list";
 
 // export const revalidate = false; // Ensures the page is statically generated
 
@@ -17,7 +18,7 @@ export default function MainLayout({
     <Sidebar>
       <div className='h-full'>
         <Navigation />
-        <Suspense>
+        <Suspense fallback={<Loading />}>
           <div className='grid grid-cols-12 gap-x-4 h-full'>
             <div
               className='hidden
