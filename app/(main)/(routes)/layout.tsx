@@ -7,13 +7,14 @@ import { CategoryList } from "./duas/_components/category/category-list";
 
 // export const revalidate = false; // Ensures the page is statically generated
 
-export default function MainLayout({
+export default async function MainLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const data = getCategoriesWithSubCategories();
+  const data = await getCategoriesWithSubCategories();
 
+  console.log(data)
   return (
     <Sidebar>
       <div className='h-full'>
