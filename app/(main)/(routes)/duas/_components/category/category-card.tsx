@@ -34,7 +34,7 @@ const CategoryCard = ({
 
   return (
       <Link
-        href={url}
+        href={"/duas/time-of-dua?cat=3"}
         role='button'
         // onClick={onExpand}
         className='w-full'
