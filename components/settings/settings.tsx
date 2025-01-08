@@ -2,8 +2,12 @@
 
 import { Languages, LayoutGrid, Settings2, Type } from "lucide-react"
 import SettingsItem from "./settings-item"
+import { useState } from "react"
 
 const Settings = () => {
+  const [isOpen, setIsOpen] = useState(1);
+
+  const onOpen = (id: number) => setIsOpen(id)
   return (
     <div 
     className='
@@ -22,23 +26,35 @@ const Settings = () => {
         <h2 className="text-xl text-center text-black font-semibold">Settings</h2>
       </div>
       <div className="space-y-2">
+
+        <div>
           <SettingsItem
-          href="#"
+          id={1}
+          onClick={(id)=> onOpen(id)}
+          isOpen={isOpen}
           icon={Languages}
           label="Language Settings"
           />
+        </div>
+          
           <SettingsItem
-          href="#"
+          id={2}
+          isOpen={isOpen}
+          onClick={(id)=> onOpen(id)}
           icon={Settings2}
           label="General Settings"
           />
           <SettingsItem
-          href="#"
+          id={3}
+          isOpen={isOpen}
+          onClick={(id)=> onOpen(id)}
           icon={Type}
           label="Font Settings"
           />
           <SettingsItem
-          href="#"
+          id={4}
+          isOpen={isOpen}
+          onClick={(id)=> onOpen(id)}
           icon={LayoutGrid}
           label="Appearance Settings"
           />

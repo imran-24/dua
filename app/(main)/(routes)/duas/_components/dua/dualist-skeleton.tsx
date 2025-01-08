@@ -3,7 +3,7 @@
 import { Skeleton } from "@/components/ui/skeleton";
 import { AlignJustify } from "lucide-react";
 import React from "react";
-import { DuaCardSkeleton } from "./dua-card";
+import { DuaCardSkeleton } from "./card/skeleton";
 
 const DualistSkeleton = () => {
   return (

@@ -6,7 +6,7 @@ import { usePathname, useSearchParams } from "next/navigation";
 import { AlignJustify } from "lucide-react";
 import { SheetSidebar } from "./sheet-sidebar";
 import DualistSkeleton from "./dualist-skeleton";
-import DuaCard from "./dua-card";
+import DuaCard from "./card";
 
 interface DuaListProps {
   duas: Dua[];

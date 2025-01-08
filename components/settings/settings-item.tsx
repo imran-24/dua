@@ -1,35 +1,39 @@
-import clsx from 'clsx'
-import { LucideIcon } from 'lucide-react'
-import Link from 'next/link'
-import React from 'react'
+import { LucideIcon } from "lucide-react";
+import React from "react";
+import { Button } from "../ui/button";
 
-interface SettingsItemProps{
-    label: string,
-    icon: LucideIcon,
-    href: string
+interface SettingsItemProps {
+  label: string;
+  icon: LucideIcon;
+  id: number;
+  onClick: (id: number) => void;
+  isOpen: number;
 }
-const SettingsItem = ({label, icon: Icon, href}: SettingsItemProps) => {
+const SettingsItem = ({
+  label,
+  icon: Icon,
+  id,
+  onClick,
+  isOpen,
+}: SettingsItemProps) => {
   return (
-    <>
-      <Link href={href}
-      className={
-        clsx(`
-        group
-        flex
-        gap-x-3
-        text-sm
-        p-3 
-        leading-6
-        rounded-lg
-        hover:text-black
-        bg-gray-100`,
-        'text-gray-500')
-      }>
+    <div>
+      <Button
+        onClick={() => onClick(id)}
+        variant={"secondary"}
+        className="w-full"
+      >
         <Icon className='h-4 w-4 shrink-0 group-hover:scale-110 duration-300 ease-in-out transition-all' />
-        <span className='text-xs hover:text-black text-neutral-500'>{label}</span>
-      </Link>
-   </>
-  )
-}
+        <span className='text-xs hover:text-black text-neutral-500'>
+          {label}
+        </span>
+      </Button>
+      {isOpen === id && <div className='flex items-center gap-2 mt-2'>
+        <Button variant={"ghost"}  className='bg-green-500 hover:bg-green-400 hover:text-white   text-white w-full'>English</Button>
+        <Button variant={"outline"} className="w-full">Bangla</Button>
+      </div>}
+    </div>
+  );
+};
 
-export default SettingsItem
+export default SettingsItem;
