@@ -1,8 +1,8 @@
 "use client";
 
 import { Skeleton } from "@/components/ui/skeleton";
-import { useOrigin } from "@/hooks/use-origin";
-import { makeUrl } from "@/lib/utils";
+// import { useOrigin } from "@/hooks/use-origin";
+// import { makeUrl } from "@/lib/utils";
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
@@ -28,9 +28,9 @@ const CategoryCard = ({
   const searchParams = useSearchParams();
   const categoryId = searchParams.get("cat")
   const isActive = id.toString() === categoryId;
-  const origin = useOrigin();
+  // const origin = useOrigin();
 
-  const url = makeUrl(origin ,category, id);
+  // const url = makeUrl(origin ,category, id);
 
   return (
       <Link
